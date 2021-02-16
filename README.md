@@ -74,6 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Step 1)
 
 ```jsx
+//src/App.js
 import React, { useState } from "react";
 import "./styles.css";
 
@@ -100,6 +101,7 @@ export default function App() {
 ### Step 2)
 
 ```jsx
+//src/App.js
 import React, { useState } from "react";
 import "./styles.css";
 
