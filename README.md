@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Description
 
-총 3단계에 걸쳐 
+총 3단계에 걸쳐 작성
 
 ### Step 1)
 
