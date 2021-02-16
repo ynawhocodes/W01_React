@@ -68,3 +68,88 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Descripytion
+
+### Step 1)
+
+```jsx
+import React, { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  const handlePlus = () => {
+    setCount(count + 1);
+  };
+  const handleMinus = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div className="App">
+      <p>{count}</p>
+      <button onClick={() => handlePlus()}>+</button>
+      <button onClick={() => handleMinus()}>-</button>
+    </div>
+  );
+}
+```
+
+### Step 2)
+
+```jsx
+import React, { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = (diff) => {
+    setCount(count + diff);
+  };
+
+  return (
+    <div className="App">
+      <p>{count}</p>
+      <button onClick={() => handleClick(1)}>+</button>
+      <button onClick={() => handleClick(-1)}>-</button>
+    </div>
+  );
+}
+```
+
+### Step 3)
+
+```jsx
+//src/App.js
+
+import React, { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [step, setStep] = useState(1);
+  const [count, setCount] = useState(0);
+
+  const handleClick = (diff) => {
+    setCount(count + diff * step);
+  };
+
+  const arr = Array.from({ length: 10 }, (v, i) => i + 1);
+
+  return (
+    <div className="App">
+      <p>{count}</p>
+      <button onClick={() => handleClick(1)}>+</button>
+      <button onClick={() => handleClick(-1)}>-</button>
+      <div>---{step}---</div>
+
+      {arr.map((i) => (
+        <button onClick={() => setStep(i)}>{i}</button>
+      ))}
+    </div>
+  );
+}
+```
+
